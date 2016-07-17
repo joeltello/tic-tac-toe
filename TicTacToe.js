@@ -47,39 +47,31 @@ Board.prototype.isWinner = function (symbol) {
   var step = 3;
   var i = 0;
   while (i < this.length / step) {
-      if (this[i] === symbol &&
-          this[i + step] === symbol &&
-          this[i+ step * 2] === symbol) {
-            return true;
-      } else {
-        i++;
-      }
+    if (this[i] === symbol && this[i + step] === symbol && this[i+ step * 2] === symbol) {
+      return true;
+    } else {
+      i++;
+    }
   }
   // check rows
   step = 1;
   i = 0;
   while (i < this.length / step) {
-    if (this[i] === symbol &&
-        this[i + step] === symbol &&
-        this[i+ step * 2] === symbol) {
-					return true;
+    if (this[i] === symbol &&	this[i + step] === symbol && this[i+ step * 2] === symbol) {
+			return true;
     } else {
       i = i + 3;
     }
   }
   // check diagonal \
   step = 4;
-  if (this[0] === symbol &&
-      this[step] === symbol &&
-      this[step * 2] === symbol) {
-        return true;
+  if (this[0] === symbol &&	this[step] === symbol && this[step * 2] === symbol) {
+		return true;
   }
   // check diagonal /
   step = 2;
-  if (this[step] === symbol &&
-      this[step * 2] === symbol &&
-      this[step * 3] === symbol) {
-        return true;
+  if (this[step] === symbol && this[step * 2] === symbol && this[step * 3] === symbol) {
+    return true;
   }
   return false;
 };
@@ -102,7 +94,7 @@ function TicTacToe (symbol1, symbol2) {
   };
 
   var getWinner = function () {
-     return winner;
+    return winner;
   };
 
   var play = function (slot, player) {
