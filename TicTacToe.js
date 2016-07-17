@@ -6,7 +6,7 @@ function Player (symbol) {
 };
 
 function Board (slots) {
-	var board = Object.create(Array.prototype);
+  var board = Object.create(Array.prototype);
   board = Array.apply(board, [slots]);
   for (var method in Board.prototype) {
     if (Board.prototype.hasOwnProperty(method)) {
@@ -58,7 +58,7 @@ Board.prototype.isWinner = function (symbol) {
   i = 0;
   while (i < this.length / step) {
     if (this[i] === symbol &&	this[i + step] === symbol && this[i+ step * 2] === symbol) {
-			return true;
+      return true;
     } else {
       i = i + 3;
     }
@@ -66,7 +66,7 @@ Board.prototype.isWinner = function (symbol) {
   // check diagonal \
   step = 4;
   if (this[0] === symbol &&	this[step] === symbol && this[step * 2] === symbol) {
-		return true;
+    return true;
   }
   // check diagonal /
   step = 2;
@@ -84,12 +84,12 @@ function TicTacToe (symbol1, symbol2) {
   var player2 = new Player(symbol2);
 
   var isWinner = function (player) {
-	  if (player.turns < 3) return false;
+    if (player.turns < 3) return false;
     if (board.isWinner(player.symbol)) {
-			winner = player;
-			return true;
+      winner = player;
+      return true;
     } else {
-    	return false;
+      return false;
     }
   };
 
